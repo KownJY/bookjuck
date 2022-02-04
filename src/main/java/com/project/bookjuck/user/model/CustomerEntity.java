@@ -16,4 +16,5 @@ public class CustomerEntity {
     private String mail;
     private String birth;
     private String phoneno;
+    private int gender;
 }

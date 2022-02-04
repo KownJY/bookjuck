@@ -26,11 +26,10 @@
         <div><h2>생년월일/성별</h2></div>
         <div class="flex">
             <input type="text" th:field="*{birth}" placeholder="8자리 입력(예.1996.01.01)" class="m-r-10 birth">
-            <select name="성별">
-                <option value="select">선택</option>
-                <option value="female">여자</option>
-                <option value="male">남자</option>
-                <option value="none">선택안함</option>
+            <select th:field="*{gender}">
+                <option th:value="1" th:text="여자"></option>
+                <option th:value="2" th:text="남자"></option>
+                <option th:value="3" th:text="선택안함"></option>
             </select>
 
         </div>

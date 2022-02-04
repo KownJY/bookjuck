@@ -4,8 +4,8 @@
 
     <insert id="insCustomer">
         Insert into customer
-            (nm,birth,phoneno,uid,upw,mail,adr)
-        values (#{nm},#{birth},#{phoneno},#{uid},#{upw},#{mail},#{adr})
+            (nm,birth,gender,phoneno,uid,upw,mail,adr)
+        values (#{nm},#{birth},${gender},#{phoneno},#{uid},#{upw},#{mail},#{adr})
     </insert>
 
 </mapper>
