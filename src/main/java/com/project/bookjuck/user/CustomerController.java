@@ -16,7 +16,17 @@ public class CustomerController {
     private CustomerService service;
 
     @GetMapping("/login")
-    public String login(){ return "user/login"; }
+    public void login(@ModelAttribute("CustomerEntity") CustomerEntity entity){  }
+
+    @PostMapping("/login")
+    public String loginProc(CustomerEntity entity){
+        int result = service.selCustomer(entity);
+        System.out.println("로그인의 결과값은 " + result);
+
+        return "temp";
+    }
+
+
 
     @GetMapping("/join")
     public void join(@ModelAttribute("entity") CustomerEntity entity){}
@@ -26,7 +36,7 @@ public class CustomerController {
     public String joinProc(CustomerEntity entity){
         System.out.println(entity);
         int result = service.insCustomer(entity);
-        return "redirect:joindone";
+        return "user/joindone";
     }
 
 }

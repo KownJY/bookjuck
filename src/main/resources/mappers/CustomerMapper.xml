@@ -8,4 +8,16 @@
         values (#{nm},#{birth},${gender},#{phoneno},#{uid},#{upw},#{mail},#{adr})
     </insert>
 
+    <select id="selCustomer" resultType="com.project.bookjuck.user.model.CustomerEntity">
+        select *
+        from customer
+        <where>
+            <if test="uid != null and uid !=''">
+                uid = #{uid}
+            </if>
+            <if test="iuser > 0">
+                iuser = ${iuser}
+            </if>
+        </where>
+    </select>
 </mapper>

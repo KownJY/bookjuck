@@ -7,4 +7,5 @@ import org.apache.ibatis.annotations.Mapper;
 public interface CustomerMapper {
 
     int insCustomer(CustomerEntity entity);
+    CustomerEntity selCustomer(CustomerEntity entity);
 }

@@ -11,29 +11,32 @@
 
 <th:block layout:fragment="content">
 
-    <section>
-        <div class="gridcenter">
-            <div class=" center">
-                <div class="border width50 ">
-                    <strong>북적북적 로그인 </strong>
-                    <br>
-                    <div>
-                        <input type="text" placeholder="아이디를 입력해 주세요." class="width100">
-                    </div>
-                    <div>
-                        <input type="password" placeholder="비밀번호를 입력해 주세요." class="width100">
-                    </div>
-                    <div>
-                        <input type="button" value="로그인" class="btnlogin">
+    <form th:action="@{/user/login}" method="post" th:object="${CustomerEntity}">
+        <section>
+            <div class="gridcenter">
+                <div class=" center">
+                    <div class="border width50 ">
+                        <strong>북적북적 로그인 </strong>
+                        <br>
+                        <div>
+                            <input type="text" th:field="*{uid}" placeholder="아이디를 입력해 주세요." class="width100">
+                        </div>
+                        <div>
+                            <input type="password" th:field="*{upw}" placeholder="비밀번호를 입력해 주세요." class="width100">
+                        </div>
+                        <div>
+                            <input type="submit" value="로그인" class="btnlogin">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="center">
-                <div>비밀번호찾기 | </div> &nbsp;&nbsp;
-                <div>회원찾기 | </div> &nbsp;&nbsp;
-                <div><a href="/project/join/join.html">회원가입</a> </div>
-            </div>
+                <div class="center">
+                    <div>비밀번호찾기 | </div> &nbsp;&nbsp;
+                    <div>회원찾기 | </div> &nbsp;&nbsp;
+                    <div><a href="/project/join/join.html">회원가입</a> </div>
+                </div>
 
-        </div>
-    </section>
+            </div>
+        </section>
+    </form>
+
 </th:block>
